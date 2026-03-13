@@ -33,20 +33,56 @@ class Window(QMainWindow):
         color = QGraphicsColorizeEffect(self) #color
         color.setColor(Qt.green) 
         head.setGraphicsEffect(color)
-        #Creates Intrest Label
+
+
+
+
+        #Creates Label
         i_label = QLabel("Annual Interest", self)
-        #Properties of Interest Label
+        #Properties of Label
         i_label.setAlignment(Qt.AlignCenter)
         i_label.setGeometry(20, 100, 170, 40)
         i_label.setStyleSheet("QLabel" "{"
                             "border : 2px solid black;"
                             "background: rbga(70, 70, 70, 35);"
                                         "}")
-        
         i_label.setFont(QFont("Times", 9))
 
+        #Input field for interest rate (QLineEdit)
+        self.rate = QLineEdit(self)
+        #Only integers accepted
+        onlyInt = QIntValidator()
+        self.rate.setValidator(onlyInt)
+        #Set properties
+        self.rate.setGeometry(200, 100, 180, 40)
+        self.rate.setAlignment(Qt.AlignCenter)
+        self.rate.setFont(QFont("Times", 9))
 
 
+
+
+
+
+        #Number of years
+        n_label = QLabel("Years", self)
+        #Properties of years
+        n_label.setAlignment(Qt.AlignCenter)
+        n_label.setGeometry(20, 150, 170, 40)
+        n_label.setStyleSheet("QLabel" "{"
+                            "border : 2px solid black;"
+                            "background: rbga(70, 70, 70, 35);"
+                                        "}")
+        n_label.setFont(QFont("Times", 9))
+
+        #Input field for num of years (QLineEdit)
+        self.years = QLineEdit(self)
+        #Only integers accepted
+        onlyInt = QIntValidator()
+        self.years.setValidator(onlyInt)
+        #Set properties
+        self.years.setGeometry(200, 150, 180, 40)
+        self.years.setAlignment(Qt.AlignCenter)
+        self.years.setFont(QFont("Times", 9))
 
 
 
