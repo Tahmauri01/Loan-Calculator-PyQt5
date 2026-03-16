@@ -37,9 +37,9 @@ class Window(QMainWindow):
 
 
 
-        #Creates Label
+    #Annual Interest Label
         i_label = QLabel("Annual Interest", self)
-        #Properties of Label
+        #Properties of Annual Interest
         i_label.setAlignment(Qt.AlignCenter)
         i_label.setGeometry(20, 100, 170, 40)
         i_label.setStyleSheet("QLabel" "{"
@@ -63,7 +63,7 @@ class Window(QMainWindow):
 
 
 
-        #Number of years
+    #Number of years
         n_label = QLabel("Years", self)
         #Properties of years
         n_label.setAlignment(Qt.AlignCenter)
@@ -84,6 +84,52 @@ class Window(QMainWindow):
         self.years.setAlignment(Qt.AlignCenter)
         self.years.setFont(QFont("Times", 9))
 
+
+
+
+
+
+    #Loan amount label
+        a_label = QLabel("Loan Amount", self)
+        #Properties of loan amount
+        a_label.setAlignment(Qt.AlignCenter)
+        a_label.setGeometry(20, 200, 170, 40)
+        a_label.setStyleSheet("QLabel" "{"
+                            "border : 2px solid black;"
+                            "background: rbga(70, 70, 70, 35);"
+                                        "}")
+        a_label.setFont(QFont("Times", 9))
+
+        #Input field for loan amount
+        self.amount = QLineEdit(self)
+        #Only integers accepted
+        onlyInt = QIntValidator()
+        self.amount.setValidator(onlyInt)
+        #Set properties
+        self.amount.setGeometry(200, 200, 180, 40)
+        self.amount.setAlignment(Qt.AlignCenter)
+        self.amount.setFont(QFont("Times", 9))
+
+    #-------------------------------Compute Payment----------------------
+
+        #Compute button
+        calculate = QPushButton("Compute Payment", self)
+        #set geometry of button
+        calculate.setGeometry(125, 270, 150, 40)
+        #Add action to calculate button
+        calculate.clicked.connect(self.calculate_action)
+
+        #---------------Output widget--------------
+    
+        #monthly payment
+        self.m_payment = QLabel(self)
+        a_label.setAlignment(Qt.AlignCenter)
+        a_label.setGeometry(20, 200, 170, 40)
+        a_label.setStyleSheet("QLabel" "{"
+                            "border : 2px solid black;"
+                            "background: rbga(70, 70, 70, 35);"
+                                        "}")
+        a_label.setFont(QFont("Times", 9))
 
 
 
