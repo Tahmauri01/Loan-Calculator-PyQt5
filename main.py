@@ -145,9 +145,33 @@ class Window(QMainWindow):
 
     
     def calculate_action(self):
-        #Get annual interest rate
+        #Get annual interest rate, years, and loan amount
         annualInterestRate = self.rate.text()
+        numYears = self.years.text()
+        l_amount = self.amount.text()
 
+        #check if no number entered
+        if len(annualInterestRate) == 0 or annualInterestRate == '0' or len(numYears) == 0 or numYears == '0' or len(l_amount) == 0 or l_amount == '0':
+            QMessageBox.critical(self, "ERROR!", "Fill the Blanks")
+
+        #Get calculations
+
+        annualInterestRate, numYears, l_amount = int(annualInterestRate), int(numYears), int(l_amount)
+        
+        #monthly interest rate = annual interest rate/[12 months x 100%]
+        monthlyInterestRate = annualInterestRate/1200
+        #Calculate monthly payment
+        monthlyPayment = l_amount * monthlyInterestRate / (1-1/(1+monthlyInterestRate) ** (numYears * 12))
+        #Monthly payments format is 2 decimal float
+        monthlyPayment = "{:2f}".format(monthlyPayment)
+
+        #Add text to monthly payment calculation
+        self.m_payment.setText(f"Monthly Payment: ${monthlyPayment}")
+
+        #Get total payment
+        totalPayment = float(monthlyPayment) * 12 * numYears
+        totalPayment = "{:2f}".format(totalPayment)
+        self.t_payment.setText(f"Total Payment: ${totalPayment}")
 
 
 
