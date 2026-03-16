@@ -44,7 +44,7 @@ class Window(QMainWindow):
         i_label.setGeometry(20, 100, 170, 40)
         i_label.setStyleSheet("QLabel" "{"
                             "border : 2px solid black;"
-                            "background: rbga(70, 70, 70, 35);"
+                            "background: red;"
                                         "}")
         i_label.setFont(QFont("Times", 9))
 
@@ -70,7 +70,7 @@ class Window(QMainWindow):
         n_label.setGeometry(20, 150, 170, 40)
         n_label.setStyleSheet("QLabel" "{"
                             "border : 2px solid black;"
-                            "background: rbga(70, 70, 70, 35);"
+                            "background: yellow;"
                                         "}")
         n_label.setFont(QFont("Times", 9))
 
@@ -96,7 +96,7 @@ class Window(QMainWindow):
         a_label.setGeometry(20, 200, 170, 40)
         a_label.setStyleSheet("QLabel" "{"
                             "border : 2px solid black;"
-                            "background: rbga(70, 70, 70, 35);"
+                            "background: blue;"
                                         "}")
         a_label.setFont(QFont("Times", 9))
 
@@ -125,7 +125,7 @@ class Window(QMainWindow):
         self.m_payment = QLabel(self)
         #properties of monthly payment
         self.m_payment.setAlignment(Qt.AlignCenter)
-        self.m_payment.setGeometry(50, 340, 300, 60)
+        self.m_payment.setGeometry(30, 340, 300, 60)
         self.m_payment.setStyleSheet("QLabel" "{"
                             "border : 3px solid black;"
                             "background: rbga(225, 225, 225, 225);"
@@ -136,7 +136,7 @@ class Window(QMainWindow):
         self.t_payment = QLabel(self)
         #properties of total payment
         self.t_payment.setAlignment(Qt.AlignCenter)
-        self.t_payment.setGeometry(50, 410, 300, 60)
+        self.t_payment.setGeometry(70, 410, 300, 60)
         self.t_payment.setStyleSheet("QLabel" "{"
                             "border : 3px solid black;"
                             "background: white"
