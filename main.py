@@ -163,14 +163,14 @@ class Window(QMainWindow):
         #Calculate monthly payment
         monthlyPayment = l_amount * monthlyInterestRate / (1-1/(1+monthlyInterestRate) ** (numYears * 12))
         #Monthly payments format is 2 decimal float
-        monthlyPayment = "{:2f}".format(monthlyPayment)
+        monthlyPayment = f"{monthlyPayment:.2f}"
 
         #Add text to monthly payment calculation
         self.m_payment.setText(f"Monthly Payment: ${monthlyPayment}")
 
         #Get total payment
         totalPayment = float(monthlyPayment) * 12 * numYears
-        totalPayment = "{:2f}".format(totalPayment)
+        totalPayment = f"{totalPayment:.2f}"
         self.t_payment.setText(f"Total Payment: ${totalPayment}")
 
 
